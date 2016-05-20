@@ -1,0 +1,14 @@
+{
+    "require": {
+        "illuminate/database": "5.1.*",
+        "illuminate/events": "5.1.*",
+        "Illuminate/pagination": "5.1.*",
+        "league/plates": "3.*"
+    },
+
+        "autoload": {
+            "classmap": [
+                ]
+        }
+}
+

@@ -1,0 +1,60 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="<?=$this->url('admin/index/admins')?>" method="post">
+        <input type="hidden" name="pageSize" value="<?=$page['size']?>">
+        <input type="hidden" name="pageCurrent" value="<?=$page['page']?>">
+        <input type="hidden" name="orderField" value="<?=$page['order']?>">
+        <input type="hidden" name="orderDirection" value="<?=$page['by']?>">
+        <div class="bjui-searchBar">
+        </div>
+        <div class="bjui-moreSearch">
+        </div>
+        <a href="<?=$this->url('admin/index/addAdmin')?>" class = "btn btn-blue" data-icon="plus" data-toggle="dialog" data-id="form" data-title="添加管理员">添加</a>
+    </form>
+</div>
+<div class="bjui-pageContent tableContent">
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th data-order-field="id">编号</th>
+                <th data-order-field="username">姓名</th>
+                <th data-order-field="sex">性别</th>
+                <th data-order-field="phone">手机</th>
+                <th data-order-field="email">邮箱</th>
+                <th data-order-direction="asc" data-order-field="created_at">创建时间</th>
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($data as $rs) :?>
+            <tr data-id="<?=$this->e($rs['id'])?>">
+                <td><?=$this->e($rs['id'])?></td>
+                <td><?=$this->e($rs['username'])?></td>
+                <td><?=$this->e($rs['sex'])?></td>
+                <td><?=$this->e($rs['phone'])?></td>
+                <td><?=$this->e($rs['email'])?></td>
+                <td><?=$this->e($rs['created_at'])?></td>
+                <td>
+                    <a href="<?=$this->url('admin/index/editAdmin',array('id'=>$rs['id']))?>" class="btn btn-green" data-toggle="dialog" data-id="form" data-title="编辑管理员">编辑</a>
+                    <a href="<?=$this->url('admin/index/delAdmin',array('id'=>$rs['id']))?>" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<div class="bjui-pageFooter">
+    <div class="pages">
+        <span>每页&nbsp;</span>
+        <div class="selectPagesize">
+            <select data-toggle="selectpicker" data-toggle-change="changepagesize">
+                <option value="30">30</option>
+                <option value="60">60</option>
+                <option value="120">120</option>
+                <option value="150">150</option>
+            </select>
+        </div>
+        <span>&nbsp;条，共 <?=$this->e($page['total'])?> 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination" data-total="<?=$this->e($page['total'])?>" data-page-size="<?=$this->e($page['size'])?>" data-page-current="<?=$this->e($page['page'])?>">
+    </div>
+</div>

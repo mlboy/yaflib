@@ -1,0 +1,56 @@
+<div class="bjui-pageContent">
+    <form action="<?=$this->url()?>" class="pageForm" data-toggle="validate">
+        <input type="hidden" name="id" value="<?=$this->e($data[$pk])?>">
+        <table class="table table-condensed table-hover">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center"><h3>新增</h3></td>
+                </tr>
+                <?php foreach ($fields as $field) :?>
+                <tr>
+                    <td>
+                        <?=$field?>
+                    </td>
+                </tr>
+                <?php endforeach;?>
+                <tr>
+                    <td>
+                        <label for="status" class="control-label x85">是否审核：</label>
+                        <input type="radio" name="status" id="status" data-toggle="icheck" value="1" checked data-rule="checked" data-label="是">
+                        <input type="radio" name="status" id="status" data-toggle="icheck" value="0" data-label="否">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close">关闭</button></li>
+        <li><button type="submit" class="btn-default">保存</button></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    function onCheckNode(e, treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj(treeId),
+            nodes = zTree.getCheckedNodes(true);
+        var ids = '', names = '';
+        for (var i = 0; i < nodes.length; i++) {
+            ids   += ','+ nodes[i].id;
+            names += ','+ nodes[i].name;
+        }
+        if (ids.length > 0) {
+            ids = ids.substr(1);
+            names = names.substr(1);
+        }
+        var $from_id = $('#'+ treeId).data('fromObj');
+        if ($from_id && $from_id.length) $from_id.val(ids);
+    }
+    function onClickNode(event, treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj(treeId);
+        zTree.checkNode(treeNode, !treeNode.checked, true, true);
+        event.preventDefault();
+    }
+</script>

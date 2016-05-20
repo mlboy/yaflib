@@ -1,0 +1,60 @@
+<div class="bjui-pageContent">
+    <form action="<?=$this->url('admin/index/addAdmin')?>" class="pageForm" data-toggle="validate">
+        <table class="table table-condensed table-hover">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center"><h3>新增</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="username" class="control-label x85">用户名：</label>
+                        <input type="text" name="username" id="username" value="" data-rule="required" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password" class="control-label x85">密码：</label>
+                        <input type="text" name="password" id="password" value="" data-rule="required" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password_re" class="control-label x85">重复密码：</label>
+                        <input type="text" name="" id="username_re" value="" data-rule="required" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="realname" class="control-label x85">真实姓名：</label>
+                        <input type="text" name="realname" id="realname" value="" data-rule="required" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sex" class="control-label x85">性别：</label>
+                        <input type="radio" name="sex" id="j_custom_sex1" data-toggle="icheck" value="1" data-rule="checked" data-label="男">
+                        <input type="radio" name="sex" id="j_custom_sex2" data-toggle="icheck" value="2" data-label="女">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phone" class="control-label x85">手机号：</label>
+                        <input type="text" name="phone" id="phone" value="" data-rule="mobile" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email" class="control-label x85">邮箱：</label>
+                        <input type="text" name="email" id="email" value="" data-rule="email" size="20">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close">关闭</button></li>
+        <li><button type="submit" class="btn-default">保存</button></li>
+    </ul>
+</div>

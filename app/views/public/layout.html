@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?=$this->e($site['title'])?></title>
+<link type="text/css"  href="<?=$this->asset('/assets/css/common.css')?>" rel="stylesheet" />
+<link type="text/css"  href="<?=$this->asset('/assets/css/main.css')?>" rel="stylesheet" />
+<script type="text/javascript" src="<?=$this->asset('/assets/js/jquery-1.10.2.min.js')?>"></script>
+<script type="text/javascript" src="<?=$this->asset('/assets/js/jquery.SuperSlide.2.1.js')?>"></script>
+</head>
+<body >
+<!--top end--> 
+<?=$this->section('main')?>
+<!-- footer-->
+<?php $this->insert('public/footer')?>
+<!-- footer end-->
+</body>
+</html
