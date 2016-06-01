@@ -18,5 +18,17 @@ yaf php lib
 
 
 获取post参数方式
+
 $this->post('name','默认值');
+
+获取get参数方式
+
 $this->get('name','默认值');
+
+controller继承Core\C 
+
+具有web属性
+
+controller继承Core\Api
+
+具有api接口属性,会有签名验证
