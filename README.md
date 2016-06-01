@@ -15,3 +15,8 @@ yaf php lib
 并且可以通过配置的形式实现增删改查.快速开发后台.后台用了bjui模板.
 
 本类适合开发api接口,后台,以及web.
+
+
+获取post参数方式
+$this->post('name','默认值');
+$this->get('name','默认值');
